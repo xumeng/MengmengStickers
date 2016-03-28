@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "DetailViewController.h"
+
+#import "XMPushTransition.h"
 #import "XMShareView.h"
 #import "AppMacro.h"
 #import "YYKit.h"
@@ -14,7 +17,6 @@
 
 @interface ViewController () <POHorizontalListDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
 
 //  分组名称
 @property (nonatomic, strong) NSArray *groupTitleList;
@@ -34,7 +36,6 @@
 //  狗带列表
 @property (nonatomic, strong) NSMutableArray *goudaiItemList;
 
-@property NSInteger selectedIndex;
 
 @property (nonatomic, strong) XMShareView *shareView;
 
@@ -71,7 +72,7 @@
     
     _groupTitleList = @[  @"doge", @"金馆长", @"本宝宝", @"叶良辰", @"黄子韬"];
     ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero
-                                               image:[UIImage imageNamed:@"icon_home_school"]
+                                               image:[YYImage imageNamed:@"doge1.gif"]
                                                 text:NSLocalizedString(@"doge正常", nil)];
     ListItem *item2= [[ListItem alloc] initWithFrame:CGRectZero
                                                image:[UIImage imageNamed:@"icon_home_school_ranking"]
@@ -276,7 +277,7 @@
         [cell.contentView addSubview:list];
         
         if (indexPath.row != [_tableView numberOfRowsInSection:0]) {
-            UIView *splitLineView = [[UIView alloc] initWithFrame:CGRectMake(0, kCellHeight-1, WIDTH(_tableView), 1)];
+            UIView *splitLineView = [[UIView alloc] initWithFrame:CGRectMake(LEFT_PADDING, kCellHeight-1, WIDTH(_tableView)-LEFT_PADDING*2, 0.5)];
             splitLineView.backgroundColor = [UIColor lightGrayColor];
             [cell.contentView addSubview:splitLineView];
         }
@@ -291,12 +292,16 @@
 }
 
 - (void)didSelectItem:(ListItem *)item {
+    _currentItem = item;
+    DetailViewController *vc = [[DetailViewController alloc] init];
+    self.navigationController.delegate = vc;
+    [self.navigationController pushViewController:vc animated:YES];
+    
     if ([item.objectTag isEqual:@(0)]) {
         
     } else if ([item.objectTag isEqual:@(1)]) {
         
     }
 }
-
 
 @end

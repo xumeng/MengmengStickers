@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "WXApi.h"
 
+@class ListItem;
 @interface ViewController : UIViewController<WXApiDelegate>
 
+@property (nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, strong) ListItem *currentItem;
 
 @end
 

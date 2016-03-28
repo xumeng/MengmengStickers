@@ -40,29 +40,29 @@
         // Title Label
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(LEFT_PADDING, 0.0, self.frame.size.width, TITLE_HEIGHT)];
         [titleLabel setText:title];
-        [titleLabel setFont:[UIFont boldSystemFontOfSize:16.0]];
-        [titleLabel setTextColor:[UIColor colorWithWhite:116.0/256.0 alpha:1.0]];
-        [titleLabel setShadowColor:[UIColor whiteColor]];
-        [titleLabel setShadowOffset:CGSizeMake(1.0, 1.0)];
+        [titleLabel setFont:FONT_CUSTOM(2, 15)];
+        [titleLabel setTextColor:[UIColor blackColor]];
+//        [titleLabel setShadowColor:[UIColor whiteColor]];
+//        [titleLabel setShadowOffset:CGSizeMake(1.0, 1.0)];
         [titleLabel setOpaque:YES];
         [titleLabel setBackgroundColor:[UIColor clearColor]];
         [self addSubview:titleLabel];
         
         // Background shadow
-        CAGradientLayer *dropshadowLayer = [CAGradientLayer layer];
-        dropshadowLayer.contentsScale = scale;
-        dropshadowLayer.startPoint = CGPointMake(0.0f, 0.0f);
-        dropshadowLayer.endPoint = CGPointMake(0.0f, 1.0f);
-        dropshadowLayer.opacity = 1.0;
-        dropshadowLayer.frame = CGRectMake(1.0f, 1.0f, self.frame.size.width - 2.0, self.frame.size.height - 2.0);
-        dropshadowLayer.locations = [NSArray arrayWithObjects:
-                                     [NSNumber numberWithFloat:0.0f],
-                                     [NSNumber numberWithFloat:1.0f], nil];
-         dropshadowLayer.colors = [NSArray arrayWithObjects:
-                                   (id)[[UIColor colorWithWhite:224.0/256.0 alpha:1.0] CGColor],
-                                   (id)[[UIColor colorWithWhite:235.0/256.0 alpha:1.0] CGColor], nil];
-         
-         [self.layer insertSublayer:dropshadowLayer below:self.scrollView.layer];
+//        CAGradientLayer *dropshadowLayer = [CAGradientLayer layer];
+//        dropshadowLayer.contentsScale = scale;
+//        dropshadowLayer.startPoint = CGPointMake(0.0f, 0.0f);
+//        dropshadowLayer.endPoint = CGPointMake(0.0f, 1.0f);
+//        dropshadowLayer.opacity = 1.0;
+//        dropshadowLayer.frame = CGRectMake(1.0f, 1.0f, self.frame.size.width - 2.0, self.frame.size.height - 2.0);
+//        dropshadowLayer.locations = [NSArray arrayWithObjects:
+//                                     [NSNumber numberWithFloat:0.0f],
+//                                     [NSNumber numberWithFloat:1.0f], nil];
+//         dropshadowLayer.colors = [NSArray arrayWithObjects:
+//                                   (id)[[UIColor colorWithWhite:224.0/256.0 alpha:1.0] CGColor],
+//                                   (id)[[UIColor colorWithWhite:235.0/256.0 alpha:1.0] CGColor], nil];
+//         
+//         [self.layer insertSublayer:dropshadowLayer below:self.scrollView.layer];
 
     }
 

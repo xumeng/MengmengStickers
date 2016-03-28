@@ -68,11 +68,11 @@
     nav1.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"热门"  image:nil tag:0];
     nav2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我的"  image:nil tag:1];
     
-    [nav1.tabBarItem setImage:[[UIImage imageNamed:@"icon_home_home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [nav1.tabBarItem setSelectedImage:[[UIImage imageNamed:@"icon_home_home_blue"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [nav1.tabBarItem setImage:[[UIImage imageNamed:@"icon_home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [nav1.tabBarItem setSelectedImage:[[UIImage imageNamed:@"icon_home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
-    [nav2.tabBarItem setImage:[[UIImage imageNamed:@"icon_home_people"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [nav2.tabBarItem setSelectedImage:[[UIImage imageNamed:@"icon_home_people_blue"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [nav2.tabBarItem setImage:[[UIImage imageNamed:@"icon_user"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [nav2.tabBarItem setSelectedImage:[[UIImage imageNamed:@"icon_user"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
 //    [nav1.tabBarItem setImageInsets:UIEdgeInsetsMake(5, 0, -5, 0)];
 //    [nav2.tabBarItem setImageInsets:UIEdgeInsetsMake(5, 0, -5, 0)];

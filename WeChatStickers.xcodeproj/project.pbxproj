@@ -131,6 +131,13 @@
 		3FA922FE1CA8260900F1ABB8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA922FD1CA8260900F1ABB8 /* ViewController.m */; };
 		3FA923011CA826F000F1ABB8 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA923001CA826F000F1ABB8 /* UserViewController.m */; };
 		3FA923051CA8293700F1ABB8 /* GKFadeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA923041CA8293700F1ABB8 /* GKFadeNavigationController.m */; };
+		3FA9230B1CA8DC9500F1ABB8 /* icon_edit@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA923081CA8DC9500F1ABB8 /* icon_edit@3x.png */; };
+		3FA9230C1CA8DC9500F1ABB8 /* icon_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA923091CA8DC9500F1ABB8 /* icon_home@3x.png */; };
+		3FA9230D1CA8DC9500F1ABB8 /* icon_user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA9230A1CA8DC9500F1ABB8 /* icon_user@3x.png */; };
+		3FA923111CA9602100F1ABB8 /* doge1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FA923101CA9602100F1ABB8 /* doge1.gif */; };
+		3FA923141CA96BE000F1ABB8 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA923131CA96BE000F1ABB8 /* DetailViewController.m */; };
+		3FA923181CA96FFC00F1ABB8 /* XMPushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA923171CA96FFC00F1ABB8 /* XMPushTransition.m */; };
+		3FA9231B1CA9775100F1ABB8 /* CategoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9231A1CA9775100F1ABB8 /* CategoryDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -371,6 +378,16 @@
 		3FA923001CA826F000F1ABB8 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserViewController.m; path = ViewController/UserViewController.m; sourceTree = "<group>"; };
 		3FA923031CA8293700F1ABB8 /* GKFadeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKFadeNavigationController.h; sourceTree = "<group>"; };
 		3FA923041CA8293700F1ABB8 /* GKFadeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKFadeNavigationController.m; sourceTree = "<group>"; };
+		3FA923081CA8DC9500F1ABB8 /* icon_edit@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_edit@3x.png"; path = "Resource/Image/icon_edit@3x.png"; sourceTree = "<group>"; };
+		3FA923091CA8DC9500F1ABB8 /* icon_home@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_home@3x.png"; path = "Resource/Image/icon_home@3x.png"; sourceTree = "<group>"; };
+		3FA9230A1CA8DC9500F1ABB8 /* icon_user@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_user@3x.png"; path = "Resource/Image/icon_user@3x.png"; sourceTree = "<group>"; };
+		3FA923101CA9602100F1ABB8 /* doge1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = doge1.gif; path = Resource/Image/doge1.gif; sourceTree = "<group>"; };
+		3FA923121CA96BE000F1ABB8 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ViewController/DetailViewController.h; sourceTree = "<group>"; };
+		3FA923131CA96BE000F1ABB8 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ViewController/DetailViewController.m; sourceTree = "<group>"; };
+		3FA923161CA96FFC00F1ABB8 /* XMPushTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPushTransition.h; sourceTree = "<group>"; };
+		3FA923171CA96FFC00F1ABB8 /* XMPushTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPushTransition.m; sourceTree = "<group>"; };
+		3FA923191CA9775100F1ABB8 /* CategoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryDetailViewController.h; path = ViewController/CategoryDetailViewController.h; sourceTree = "<group>"; };
+		3FA9231A1CA9775100F1ABB8 /* CategoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryDetailViewController.m; path = ViewController/CategoryDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,6 +459,8 @@
 		3F8C0B2A1CA18B15000F88D1 /* WeChatStickers */ = {
 			isa = PBXGroup;
 			children = (
+				3FA923061CA8DC3800F1ABB8 /* Resource */,
+				3FA923151CA96FAA00F1ABB8 /* Transition */,
 				3FA922F81CA8256400F1ABB8 /* ViewController */,
 				3F8C0B2B1CA18B15000F88D1 /* AppDelegate.h */,
 				3F8C0B2C1CA18B15000F88D1 /* AppDelegate.m */,
@@ -847,6 +866,10 @@
 				3FA922FA1CA8259D00F1ABB8 /* BaseViewController.m */,
 				3FA922FF1CA826F000F1ABB8 /* UserViewController.h */,
 				3FA923001CA826F000F1ABB8 /* UserViewController.m */,
+				3FA923121CA96BE000F1ABB8 /* DetailViewController.h */,
+				3FA923131CA96BE000F1ABB8 /* DetailViewController.m */,
+				3FA923191CA9775100F1ABB8 /* CategoryDetailViewController.h */,
+				3FA9231A1CA9775100F1ABB8 /* CategoryDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -858,6 +881,34 @@
 				3FA923041CA8293700F1ABB8 /* GKFadeNavigationController.m */,
 			);
 			path = GKFadeNavigationController;
+			sourceTree = "<group>";
+		};
+		3FA923061CA8DC3800F1ABB8 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3FA923071CA8DC4000F1ABB8 /* Image */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		3FA923071CA8DC4000F1ABB8 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				3FA923101CA9602100F1ABB8 /* doge1.gif */,
+				3FA923081CA8DC9500F1ABB8 /* icon_edit@3x.png */,
+				3FA923091CA8DC9500F1ABB8 /* icon_home@3x.png */,
+				3FA9230A1CA8DC9500F1ABB8 /* icon_user@3x.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		3FA923151CA96FAA00F1ABB8 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				3FA923161CA96FFC00F1ABB8 /* XMPushTransition.h */,
+				3FA923171CA96FFC00F1ABB8 /* XMPushTransition.m */,
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -925,10 +976,14 @@
 				3F8C0C1D1CA18B15000F88D1 /* Images.xcassets in Resources */,
 				3F8C0C211CA18B15000F88D1 /* WeiboSDK.bundle in Resources */,
 				3F8C0C1B1CA18B15000F88D1 /* LaunchScreen.xib in Resources */,
+				3FA9230C1CA8DC9500F1ABB8 /* icon_home@3x.png in Resources */,
 				3F8C0C2C1CA18B15000F88D1 /* icon_share_webo@2x.png in Resources */,
 				3F8C0C2B1CA18B15000F88D1 /* icon_share_qzone@2x.png in Resources */,
 				3F8C0C291CA18B15000F88D1 /* icon_share_moment@2x.png in Resources */,
 				3F8C0C2E1CA18B15000F88D1 /* logo.jpg in Resources */,
+				3FA9230D1CA8DC9500F1ABB8 /* icon_user@3x.png in Resources */,
+				3FA923111CA9602100F1ABB8 /* doge1.gif in Resources */,
+				3FA9230B1CA8DC9500F1ABB8 /* icon_edit@3x.png in Resources */,
 				3F8C0C2A1CA18B15000F88D1 /* icon_share_qq@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -969,12 +1024,14 @@
 				3F8C0C321CA18B15000F88D1 /* XMShareWeiboUtil.m in Sources */,
 				3F8C0C271CA18B15000F88D1 /* VerticalUIButton.m in Sources */,
 				3F8C0C411CA18B15000F88D1 /* NSTimer+YYAdd.m in Sources */,
+				3FA9231B1CA9775100F1ABB8 /* CategoryDetailViewController.m in Sources */,
 				3F8C0C531CA18B15000F88D1 /* YYDiskCache.m in Sources */,
 				3F8C0C541CA18B15000F88D1 /* YYKVStorage.m in Sources */,
 				3F8C0C5C1CA18B15000F88D1 /* YYFrameImage.m in Sources */,
 				3F8C0C601CA18B15000F88D1 /* YYSpriteSheetImage.m in Sources */,
 				3F8C0C3E1CA18B15000F88D1 /* NSObject+YYAddForKVO.m in Sources */,
 				3F8C0C5A1CA18B15000F88D1 /* UIImageView+YYWebImage.m in Sources */,
+				3FA923141CA96BE000F1ABB8 /* DetailViewController.m in Sources */,
 				3F8C0C571CA18B15000F88D1 /* CALayer+YYWebImage.m in Sources */,
 				3F8C0C301CA18B15000F88D1 /* XMShareUtil.m in Sources */,
 				3F8C0C701CA18B15000F88D1 /* UIPasteboard+YYText.m in Sources */,
@@ -1018,6 +1075,7 @@
 				3F8C0C761CA18B15000F88D1 /* YYTextUtilities.m in Sources */,
 				3F8C0C4C1CA18B15000F88D1 /* UIImage+YYAdd.m in Sources */,
 				3F8C0C361CA18B15000F88D1 /* NSData+YYAdd.m in Sources */,
+				3FA923181CA96FFC00F1ABB8 /* XMPushTransition.m in Sources */,
 				3F8C0C591CA18B15000F88D1 /* UIButton+YYWebImage.m in Sources */,
 				3F8C0C521CA18B15000F88D1 /* YYCache.m in Sources */,
 				3F8C0C561CA18B15000F88D1 /* _YYWebImageSetter.m in Sources */,

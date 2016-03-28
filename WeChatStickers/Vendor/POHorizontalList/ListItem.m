@@ -7,6 +7,7 @@
 //
 
 #import "ListItem.h"
+#import "YYImage.h"
 
 @implementation ListItem
 
@@ -20,28 +21,32 @@
         self.imageTitle = imageTitle;
         self.image = image;
         
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        if (!image) {
+            image = [YYImage imageNamed:@"doge1.gif"];
+        }
+        
+        _imageView = [[YYAnimatedImageView alloc] initWithImage:image];
 
-        CALayer *roundCorner = [imageView layer];
+        CALayer *roundCorner = [_imageView layer];
         [roundCorner setMasksToBounds:YES];
         [roundCorner setCornerRadius:8.0];
         [roundCorner setBorderColor:[UIColor blackColor].CGColor];
         [roundCorner setBorderWidth:1.0];
         
-        UILabel *title = [[UILabel alloc] init];
-        [title setBackgroundColor:[UIColor clearColor]];
-        [title setFont:[UIFont boldSystemFontOfSize:12.0]];
-        [title setOpaque: NO];
-        [title setText:imageTitle];
+        _title = [[UILabel alloc] init];
+        [_title setBackgroundColor:[UIColor clearColor]];
+        [_title setFont:FONT_CUSTOM(1, 12)];
+        [_title setOpaque:NO];
+        [_title setText:imageTitle];
         
         imageRect = CGRectMake(0.0, 0.0, 72.0, 72.0);
         textRect = CGRectMake(0.0, imageRect.origin.y + imageRect.size.height + 10.0, 80.0, 20.0);
         
-        [title setFrame:textRect];
-        [imageView setFrame:imageRect];
+        [_title setFrame:textRect];
+        [_imageView setFrame:imageRect];
         
-        [self addSubview:title];
-        [self addSubview:imageView];
+        [self addSubview:_title];
+        [self addSubview:_imageView];
     }
     
     return self;

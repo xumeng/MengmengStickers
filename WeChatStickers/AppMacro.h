@@ -40,9 +40,6 @@
 ///  标注基于iPhone6，计算屏幕与iPhone6屏幕的比例，进行适配
 #define SCALE_OF_IPHONE6_SCREEN ([[UIScreen mainScreen] bounds].size.width/375.)
 
-/////  尺寸自动基于iPhone6适配成实际大小
-//#define SCALE(v)              ((V)*([[UIScreen mainScreen] bounds].size.width/375.))
-
 #define WIDTH_OF_STANDARD_SIZE 320.f
 #define HEIGHT_OF_4S 480.f
 #define HEIGHT_OF_5S 568.f
@@ -57,9 +54,6 @@
 #define WeakObj(o) autoreleasepool{} __weak typeof(o) o##Weak = o;
 #define StrongObj(o) autoreleasepool{} __strong typeof(o) o = o##Weak;
 
-
-///  自定义弹出框
-#define showAlert(_msg) {UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:_msg delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定",nil];[alert show];}
 
 ///  SVProgressHUD显示
 #define showHUDInfo(text) {\
@@ -116,7 +110,16 @@ View.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green
 
 #define FONT(NAME, FONTSIZE)    [UIFont fontWithName:(NAME) size:(FONTSIZE)]
 
-#define FONT_CUSTOM(LEVEL, FONTSIZE)    [UIFont fontWithName:(LEVEL == 0 ? @"STHeitiSC-Light" : LEVEL == 1 ? @"STHeitiSC-Medium" : @"STHeitiSC-Bold") size:(FONTSIZE)]
+#define FONT_CUSTOM(LEVEL, FONTSIZE)    \
+\
+[UIFont fontWithName:(\
+LEVEL == 0 ? @"PingFangSC-Ultralight" :\
+LEVEL == 1 ? @"PingFangSC-Light" :\
+LEVEL == 2 ? @"PingFangSC-Thin" :\
+LEVEL == 3 ? @"PingFangSC-Regular" :\
+LEVEL == 4 ? @"PingFangSC-Medium" : \
+@"PingFangSC-Semibold")\
+size:(FONTSIZE)]
 
 #define FONT_XX    [UIFont systemFontOfSize:18]
 #define FONT_X    [UIFont systemFontOfSize:14]

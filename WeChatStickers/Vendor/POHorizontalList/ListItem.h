@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "AppMacro.h"
 
 @interface ListItem : UIView {
     CGRect textRect;
@@ -15,6 +16,9 @@
 }
 
 @property (nonatomic, retain) NSObject *objectTag;
+
+@property (nonatomic, retain) UILabel *title;
+@property (nonatomic, retain) UIImageView *imageView;
 
 @property (nonatomic, retain) NSString *imageTitle;
 @property (nonatomic, retain) UIImage *image;
