@@ -58,7 +58,7 @@
     [message setThumbImage:SHARE_IMG];
     
     WXEmoticonObject *imgo = [WXEmoticonObject object];
-    YYImage *image = [YYImage imageNamed:@"1.jpeg"];
+    YYImage *image = [YYImage imageNamed:@"doge1.gif"];
     imgo.emoticonData = image.animatedImageData;
 //    UIImageJPEGRepresentation([UIImage imageNamed:@"niconiconi@2x.gif"], 1);
 //    self.shareImageData;
