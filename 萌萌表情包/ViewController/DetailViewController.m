@@ -30,14 +30,22 @@
 
 
 - (void)initUI {
-    self.title = @"分类详情";
+    self.title = @"表情详情";
 
-    _imageView = [[UIImageView alloc] init];
-    CGFloat imageSize = WIDTH(self.view)-20;
-    _imageView.frame = CGRectMake(10, 5+HEIGHT_OF_TOP_BAR, imageSize, imageSize);
-    _imageView.image = paramImage;
-    ViewRadius(_imageView, 30);
+    _imageView = [[YYAnimatedImageView alloc] initWithImage:paramImage];
+//    CGFloat imageSize = WIDTH(self.view)-20;
+    CGSize imageSize = paramImage.size;
+    if (imageSize.width > WIDTH(self.view)) {
+        imageSize.width = WIDTH(self.view);
+        imageSize.height = WIDTH(self.view)/paramImage.size.width *paramImage.size.height;
+    }
+    _imageView.frame = CGRectMake(WIDTH(self.view)/2-imageSize.width/2, 0, imageSize.width, imageSize.height);
+//    _imageView.image = paramImage;
+//    _imageView.contentMode = UIViewContentModeScaleAspectFit;
+    ViewRadius(_imageView, imageSize.width/10);
     [self.view addSubview:_imageView];
+    
+    _imageView.centerY = self.view.centerY*0.6;
     
     UIView *shareView = [[UIView alloc] init];
 //    shareView.backgroundColor = UIColorRandom;

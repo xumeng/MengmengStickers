@@ -7,7 +7,15 @@
 //
 
 #import "BaseViewController.h"
+#import "GKFadeNavigationController.h"
 
-@interface UserViewController : BaseViewController
+@interface UserViewController : BaseViewController<GKFadeNavigationControllerDelegate, UIScrollViewDelegate>
+
+@property (nonatomic, strong) UIScrollView *mainView;
+
+@property (nonatomic, strong) UIImageView *headerView;
+
+@property (nonatomic)  GKFadeNavigationControllerNavigationBarVisibility nv;
+
 
 @end

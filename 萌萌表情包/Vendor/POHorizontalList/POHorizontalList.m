@@ -48,7 +48,7 @@
         [titleLabel setBackgroundColor:[UIColor clearColor]];
         [self addSubview:titleLabel];
         
-        UIButton *showAllButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 0, self.frame.size.width - 200, TITLE_HEIGHT)];
+        UIButton *showAllButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width-10, TITLE_HEIGHT)];
         [showAllButton setTitle:@"显示全部 >        " forState:UIControlStateNormal];
         [showAllButton setTitleColor:UIColorFromRGB(0x666676) forState:UIControlStateNormal];
         [showAllButton addTarget:self action:@selector(showCategoryDetail) forControlEvents:UIControlEventTouchUpInside];

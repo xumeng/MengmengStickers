@@ -7,6 +7,7 @@
 //
 
 #import "CategoryDetailViewController.h"
+#import "DetailViewController.h"
 #import "YYImage.h"
 
 @implementation CategoryDetailViewController
@@ -17,7 +18,7 @@
     
     UICollectionViewFlowLayout *layout=[[ UICollectionViewFlowLayout alloc ] init];
     
-    CGRect frame = CGRectMake(0, 0, WIDTH(self.view), HEIGHT(self.view)-HEIGHT_OF_TAB_BAR);
+    CGRect frame = CGRectMake(0, 0, WIDTH(self.view), HEIGHT(self.view));
     _collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
     _collectionView.delegate = self;
     _collectionView.alwaysBounceVertical = YES;
@@ -46,22 +47,25 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSString *imgName = [NSString stringWithFormat:@"%@%ld", _categoryName, indexPath.item+1];
-//    cell.backgroundColor = UIColorRandom;
-    UIImageView *imgView = [[UIImageView alloc] init];
-    imgView.frame = cell.contentView.bounds;
     
+    
+    YYAnimatedImageView *imgView = [cell.contentView viewWithTag:999];
     UIImage *img = [YYImage imageNamed:imgName];
-    imgView.image = img;
     
-    NSInteger listItem = 3;
-    if (img.size.width < WIDTH(collectionView) / listItem) {
-        imgView.contentMode = UIViewContentModeCenter;
-    } else {
-        imgView.contentMode = UIViewContentModeScaleAspectFit;
+    if (!imgView) {
+        imgView = [[YYAnimatedImageView alloc] initWithImage:img];
+        imgView.frame = cell.contentView.bounds;
+        imgView.tag = 999;
+        
+        NSInteger listItem = 3;
+        if (img.size.width < WIDTH(collectionView) / listItem) {
+            imgView.contentMode = UIViewContentModeCenter;
+        } else {
+            imgView.contentMode = UIViewContentModeScaleAspectFit;
+        }
+        [cell.contentView addSubview:imgView];
     }
-    
-    
-    [cell.contentView addSubview:imgView];
+    imgView.image = img;
     
     return cell;
 }
@@ -98,9 +102,12 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (indexPath.item) {
-            
-    }
+    DetailViewController *vc = [[DetailViewController alloc] init];
+    UIImageView *selectImageView = [[collectionView cellForItemAtIndexPath:indexPath].contentView viewWithTag:999];
+    vc.paramImage = selectImageView.image;
+    vc.hidesBottomBarWhenPushed = YES;
+//    self.navigationController.delegate = vc;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
