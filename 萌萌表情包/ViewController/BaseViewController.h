@@ -10,6 +10,7 @@
 #import "UIView+YYAdd.h"
 #import "Constants.h"
 #import "AppMacro.h"
+#import "SVProgressHUD.h"
 
 @interface BaseViewController : UIViewController
 

@@ -45,8 +45,8 @@
     
     
     //设置SVProgressHUD样式
-//    [SVProgressHUD setBackgroundColor:UIColorFromRGBA(0x000000, 0.7)];
-//    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
+    [SVProgressHUD setBackgroundColor:UIColorFromRGBA(0x000000, 0.7)];
+    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
     
     //    [[UINavigationBar appearance] setTranslucent:NO];     //  设置导航栏半透明
     

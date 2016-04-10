@@ -14,10 +14,12 @@
 #import "CommonMarco.h"
 #import "XMShareWechatUtil.h"
 #import "XMShareQQUtil.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @implementation DetailViewController
 
 @synthesize paramImage;
+@synthesize shareView;
 
 - (instancetype)init
 {
@@ -26,6 +28,22 @@
         
     }
     return self;
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [UIView animateWithDuration:.8 delay:0 usingSpringWithDamping:.5 initialSpringVelocity:5 options:nil animations:^{
+        shareView.top = _imageView.bottom + 10;
+        shareView.left = 10;
+//        shareView.width = WIDTH(self.view)-20;
+//        shareView.height = HEIGHT(self.view) - HEIGHT_OF_TAB_BAR - BOTTEMOF(_imageView) - 10;
+        [shareView sizeToFit];
+    } completion:^(BOOL finished) {
+        
+    }];
+    
 }
 
 
@@ -47,14 +65,12 @@
     
     _imageView.centerY = self.view.centerY*0.6;
     
-    UIView *shareView = [[UIView alloc] init];
+    CGRect originFrame = CGRectMake(0, HEIGHT(self.view), WIDTH(self.view)-20, HEIGHT(self.view) - HEIGHT_OF_TAB_BAR - BOTTEMOF(_imageView) - 10);
+    shareView = [[UIView alloc] initWithFrame:originFrame];
 //    shareView.backgroundColor = UIColorRandom;
     [self.view addSubview:shareView];
-    [shareView sizeToFit];
-    shareView.top = _imageView.bottom + 10;
-    shareView.left = 10;
-    shareView.width = WIDTH(self.view)-20;
-    shareView.height = HEIGHT(self.view) - HEIGHT_OF_TAB_BAR - BOTTEMOF(_imageView) - 10;
+    
+    
     
     UIButton *wechatButton = [[UIButton alloc] init];
     [wechatButton setImage:[UIImage imageNamed:@"icon_wechat"] forState:UIControlStateNormal];
@@ -85,6 +101,27 @@
     qqButton.centerX = WIDTH(shareView) / 4 * 3;
     qqButton.centerY = shareView.height/2;
     
+    
+    UIButton *favButton = [[UIButton alloc] init];
+    [favButton setImage:[UIImage imageNamed:@"icon_fav"] forState:UIControlStateNormal];
+    [favButton addTarget:self action:@selector(gotoFav) forControlEvents:UIControlEventTouchUpInside];
+    [shareView addSubview:favButton];
+    
+    [favButton sizeToFit];
+//    favButton.centerX = shareView.centerX/2;
+    favButton.left = wechatButton.right;
+    favButton.top = wechatButton.bottom + 20;
+    
+    
+    UIButton *downloadButton = [[UIButton alloc] init];
+    [downloadButton setImage:[UIImage imageNamed:@"icon_download"] forState:UIControlStateNormal];
+    [downloadButton addTarget:self action:@selector(gotoSave) forControlEvents:UIControlEventTouchUpInside];
+    [shareView addSubview:downloadButton];
+    
+    [downloadButton sizeToFit];
+//    downloadButton.centerX = shareView.centerX/2*3;
+    downloadButton.left = timelineButton.right;
+    downloadButton.top = wechatButton.bottom + 20;
     
 }
 
@@ -126,6 +163,22 @@
 //    util.shareUrl = self.shareUrl;
     
     [util shareToQQ];
+}
+
+- (void)gotoFav {
+    
+}
+
+- (void)gotoSave {
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc]init];
+    [library writeImageToSavedPhotosAlbum:paramImage.CGImage orientation:(ALAssetOrientation)paramImage.imageOrientation completionBlock:^(NSURL *asSetUrl,NSError *error){
+        if (error) {
+            //失败
+            [SVProgressHUD showInfoWithStatus:@"存储失败，请检查相册权限设置" maskType:SVProgressHUDMaskTypeClear];
+        }else{
+            [SVProgressHUD showInfoWithStatus:@"存储成功" maskType:SVProgressHUDMaskTypeClear];
+        }
+    }];
 }
 
 
