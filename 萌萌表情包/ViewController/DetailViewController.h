@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) UIImage *paramImage;
 
+@property (nonatomic, strong) NSString *paramImageName;
+
 @property (nonatomic, strong) UIView *shareView;
 
 @end

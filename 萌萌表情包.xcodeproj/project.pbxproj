@@ -25,6 +25,9 @@
 		3F3EE60C1CBAA58600A4A39C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3F3EE6081CBAA58600A4A39C /* SVProgressHUD.bundle */; };
 		3F3EE60D1CBAA58600A4A39C /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EE60A1CBAA58600A4A39C /* SVProgressHUD.m */; };
 		3F3EE60F1CBAA8F900A4A39C /* share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3EE60E1CBAA8F900A4A39C /* share@3x.png */; };
+		3F3EE8281CBB913600A4A39C /* FavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EE8271CBB913600A4A39C /* FavViewController.m */; };
+		3F3EE82B1CBBAA2C00A4A39C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EE82A1CBBAA2C00A4A39C /* AboutViewController.m */; };
+		3F3EE82F1CBBAFEA00A4A39C /* ToolsUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EE82E1CBBAFEA00A4A39C /* ToolsUtil.m */; };
 		3F7A7C611B73364C005D9564 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7A7C601B73364C005D9564 /* libz.dylib */; };
 		3F7A7C631B733655005D9564 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7A7C621B733655005D9564 /* libc++.dylib */; };
 		3F7A7C651B73365A005D9564 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7A7C641B73365A005D9564 /* libsqlite3.0.dylib */; };
@@ -670,6 +673,12 @@
 		3F3EE6091CBAA58600A4A39C /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		3F3EE60A1CBAA58600A4A39C /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		3F3EE60E1CBAA8F900A4A39C /* share@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@3x.png"; sourceTree = "<group>"; };
+		3F3EE8261CBB913600A4A39C /* FavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavViewController.h; sourceTree = "<group>"; };
+		3F3EE8271CBB913600A4A39C /* FavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavViewController.m; sourceTree = "<group>"; };
+		3F3EE8291CBBAA2C00A4A39C /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		3F3EE82A1CBBAA2C00A4A39C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		3F3EE82D1CBBAFEA00A4A39C /* ToolsUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsUtil.h; sourceTree = "<group>"; };
+		3F3EE82E1CBBAFEA00A4A39C /* ToolsUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolsUtil.m; sourceTree = "<group>"; };
 		3F7A7C191B731B91005D9564 /* 萌萌表情包.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "萌萌表情包.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7A7C601B73364C005D9564 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3F7A7C621B733655005D9564 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
@@ -1535,6 +1544,8 @@
 				3F9B10861CB1585C0026C1ED /* Transition */,
 				3F9B10891CB1585C0026C1ED /* Vendor */,
 				3F9B11701CB1585C0026C1ED /* ViewController */,
+				3F3EE82D1CBBAFEA00A4A39C /* ToolsUtil.h */,
+				3F3EE82E1CBBAFEA00A4A39C /* ToolsUtil.m */,
 			);
 			path = "萌萌表情包";
 			sourceTree = "<group>";
@@ -1984,6 +1995,10 @@
 				3F9B117A1CB1585C0026C1ED /* UserViewController.m */,
 				3F9B117B1CB1585C0026C1ED /* ViewController.h */,
 				3F9B117C1CB1585C0026C1ED /* ViewController.m */,
+				3F3EE8261CBB913600A4A39C /* FavViewController.h */,
+				3F3EE8271CBB913600A4A39C /* FavViewController.m */,
+				3F3EE8291CBBAA2C00A4A39C /* AboutViewController.h */,
+				3F3EE82A1CBBAA2C00A4A39C /* AboutViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -3133,6 +3148,7 @@
 				3F9B11E81CB1585C0026C1ED /* YYKeychain.m in Sources */,
 				3F9B119D1CB1585C0026C1ED /* XMShareWeiboUtil.m in Sources */,
 				3F9B11F51CB1585C0026C1ED /* ViewController.m in Sources */,
+				3F3EE8281CBB913600A4A39C /* FavViewController.m in Sources */,
 				3F9B11C01CB1585C0026C1ED /* YYMemoryCache.m in Sources */,
 				3F9B11BC1CB1585C0026C1ED /* UIView+YYAdd.m in Sources */,
 				3F9B11A11CB1585C0026C1ED /* NSData+YYAdd.m in Sources */,
@@ -3153,6 +3169,7 @@
 				3F9B118E1CB1585C0026C1ED /* POHorizontalList.m in Sources */,
 				3F9B11D41CB1585C0026C1ED /* YYTextKeyboardManager.m in Sources */,
 				3F9B11D31CB1585C0026C1ED /* YYTextInput.m in Sources */,
+				3F3EE82B1CBBAA2C00A4A39C /* AboutViewController.m in Sources */,
 				3F9B11A41CB1585C0026C1ED /* NSKeyedUnarchiver+YYAdd.m in Sources */,
 				3F9B11B31CB1585C0026C1ED /* UIControl+YYAdd.m in Sources */,
 				3F9B11CB1CB1585C0026C1ED /* YYSpriteSheetImage.m in Sources */,
@@ -3201,6 +3218,7 @@
 				3F9B11B41CB1585C0026C1ED /* UIDevice+YYAdd.m in Sources */,
 				3F9B11A81CB1585C0026C1ED /* NSObject+YYAddForARC.m in Sources */,
 				3F9B11D01CB1585C0026C1ED /* YYTextContainerView.m in Sources */,
+				3F3EE82F1CBBAFEA00A4A39C /* ToolsUtil.m in Sources */,
 				3F9B119E1CB1585C0026C1ED /* XMShareView.m in Sources */,
 				3F9B11C41CB1585C0026C1ED /* UIButton+YYWebImage.m in Sources */,
 				3F9B11B81CB1585C0026C1ED /* UIScreen+YYAdd.m in Sources */,

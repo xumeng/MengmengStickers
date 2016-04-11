@@ -16,5 +16,7 @@
 
 @property NSInteger itemCount;
 
+@property BOOL isFav;
+
 
 @end

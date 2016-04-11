@@ -9,8 +9,23 @@
 #import "CategoryDetailViewController.h"
 #import "DetailViewController.h"
 #import "YYImage.h"
+#import "ToolsUtil.h"
+
+@interface CategoryDetailViewController ()
+
+@property (nonatomic, strong) NSArray *favList;
+
+@end
 
 @implementation CategoryDetailViewController
+
+- (void)configureData {
+    if (_isFav) {
+        NSDictionary *userDict = [ToolsUtil getUserConfig];
+        _favList = userDict[@"favList"];
+        _itemCount = _favList.count;
+    }
+}
 
 - (void) initUI {
     self.title = @"分类详情";
@@ -46,7 +61,12 @@
     static NSString * CellIdentifier = @"cellId";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    NSString *imgName = [NSString stringWithFormat:@"%@%ld", _categoryName, indexPath.item+1];
+    NSString *imgName;
+    if (_isFav) {
+        imgName = _favList[indexPath.item];
+    } else {
+        imgName = [NSString stringWithFormat:@"%@%ld", _categoryName, indexPath.item+1];
+    }
     
     
     YYAnimatedImageView *imgView = [cell.contentView viewWithTag:999];
@@ -102,9 +122,17 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSString *imgName;
+    if (_isFav) {
+        imgName = _favList[indexPath.item];
+    } else {
+        imgName = [NSString stringWithFormat:@"%@%ld", _categoryName, indexPath.item+1];
+    }
+    
     DetailViewController *vc = [[DetailViewController alloc] init];
     UIImageView *selectImageView = [[collectionView cellForItemAtIndexPath:indexPath].contentView viewWithTag:999];
     vc.paramImage = selectImageView.image;
+    vc.paramImageName = imgName;
     vc.hidesBottomBarWhenPushed = YES;
 //    self.navigationController.delegate = vc;
     [self.navigationController pushViewController:vc animated:YES];

@@ -11,7 +11,7 @@
 
 @implementation ListItem
 
-- (id)initWithFrame:(CGRect)frame image:(UIImage *)image text:(NSString *)imageTitle
+- (id)initWithFrame:(CGRect)frame image:(UIImage *)image text:(NSString *)imageTitle imageUrl:(NSString *)imageUrl
 {
     self = [super initWithFrame:frame];
     
@@ -20,6 +20,7 @@
         
 //        self.imageTitle = imageTitle;
         self.image = image;
+        self.imageUrl = imageUrl;
         
         if (!image) {
             image = [YYImage imageNamed:@"doge1.gif"];

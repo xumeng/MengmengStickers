@@ -9,7 +9,7 @@
 #ifndef Constants_h
 #define Constants_h
 
-#define APP_COLOR UIColorFromRGB(0x2389eb)
+#define APP_COLOR UIColorFromRGB(0x000000)
 
 
 #endif /* Constants_h */

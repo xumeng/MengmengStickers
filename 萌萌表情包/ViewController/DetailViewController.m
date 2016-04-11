@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "ToolsUtil.h"
 #import "UIView+YYAdd.h"
 #import "YYImage.h"
 #import "XMPushTransition.h"
@@ -19,6 +20,7 @@
 @implementation DetailViewController
 
 @synthesize paramImage;
+@synthesize paramImageName;
 @synthesize shareView;
 
 - (instancetype)init
@@ -166,7 +168,22 @@
 }
 
 - (void)gotoFav {
+    NSDictionary *userDict = [ToolsUtil getUserConfig];
+    NSMutableArray *favList = userDict[@"favList"];
+    if (!favList) {
+        favList = [[NSMutableArray alloc] init];
+    } else {
+        if (![favList isMemberOfClass:[NSMutableArray class]]) {
+            favList = [favList mutableCopy];
+        }
+    }
     
+    if (![favList containsObject:paramImageName]) {
+        [favList addObject:paramImageName];
+        [userDict setValue:favList forKey:@"favList"];
+        [ToolsUtil saveUserConfigToNSUserDefaults:userDict];
+    }
+    [SVProgressHUD showSuccessWithStatus:@"收藏成功"];
 }
 
 - (void)gotoSave {

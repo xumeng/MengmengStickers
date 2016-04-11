@@ -81,7 +81,8 @@
         NSString *imgName = [NSString stringWithFormat:@"doge%ld", i-1];
         ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero
                                                    image:[YYImage imageNamed:imgName]
-                                                    text:NSLocalizedString(@"doge正常", nil)];
+                                                    text:NSLocalizedString(@"doge正常", nil)
+                                                imageUrl:imgName];
         item1.objectTag = @(i);
         [_dogeItemList addObject:item1];
     }
@@ -90,7 +91,8 @@
         NSString *imgName = [NSString stringWithFormat:@"guanzhang%ld", i];
         ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero
                                                    image:[YYImage imageNamed:imgName]
-                                                    text:NSLocalizedString(@"doge正常", nil)];
+                                                    text:NSLocalizedString(@"doge正常", nil)
+                                                imageUrl:imgName];
         item1.objectTag = @(i);
         [_kingItemList addObject:item1];
     }
@@ -99,7 +101,8 @@
         NSString *imgName = [NSString stringWithFormat:@"mao%ld", i];
         ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero
                                                    image:[YYImage imageNamed:imgName]
-                                                    text:NSLocalizedString(@"doge正常", nil)];
+                                                    text:NSLocalizedString(@"doge正常", nil)
+                                                imageUrl:imgName];
         item1.objectTag = @(i);
         [_baobaoItemList addObject:item1];
     }
@@ -108,7 +111,8 @@
         NSString *imgName = [NSString stringWithFormat:@"liangchen%ld", i];
         ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero
                                                    image:[YYImage imageNamed:imgName]
-                                                    text:NSLocalizedString(@"doge正常", nil)];
+                                                    text:NSLocalizedString(@"doge正常", nil)
+                                                imageUrl:imgName];
         item1.objectTag = @(i);
         [_liangchenItemList addObject:item1];
     }
@@ -117,7 +121,8 @@
         NSString *imgName = [NSString stringWithFormat:@"goudai%ld", i];
         ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero
                                                    image:[YYImage imageNamed:imgName]
-                                                    text:NSLocalizedString(@"doge正常", nil)];
+                                                    text:NSLocalizedString(@"doge正常", nil)
+                                                imageUrl:imgName];
         item1.objectTag = @(i);
         [_goudaiItemList addObject:item1];
     }
@@ -206,6 +211,7 @@
     _currentItem = item;
     DetailViewController *vc = [[DetailViewController alloc] init];
     vc.paramImage = item.image;
+    vc.paramImageName = item.imageUrl;
     vc.hidesBottomBarWhenPushed = YES;
     self.navigationController.delegate = vc;
     [self.navigationController pushViewController:vc animated:YES];

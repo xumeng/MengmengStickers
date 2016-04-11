@@ -23,6 +23,8 @@
 //@property (nonatomic, retain) NSString *imageTitle;
 @property (nonatomic, retain) UIImage *image;
 
-- (id)initWithFrame:(CGRect)frame image:(UIImage *)image text:(NSString *)imageTitle;
+@property (nonatomic, retain) NSString *imageUrl;
+
+- (id)initWithFrame:(CGRect)frame image:(UIImage *)image text:(NSString *)imageTitle imageUrl:(NSString *)imageUrl;
 
 @end
