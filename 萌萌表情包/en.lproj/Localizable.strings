@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  萌萌表情包
+
+  Created by Amon on 16/4/12.
+  Copyright © 2016年 GodPlace. All rights reserved.
+*/
+
+"app_name" = "Mengmeng Stickers";
+
+"main_title" = "Hot";
+"user_title" = "Me";
+
+"cate_doge" = "doge";
+"cate_guanzhang" = "Kim-gwanjang";
+"cate_weisuocat" = "Face Cat";
+"cate_yeliangchen" = "Ye Liangchen";
+"cate_huangzitao" = "Huang Zitao";
+
+"show_all" = "Show All >        ";
+"cate_detail_title" = "Sticker Category";
+"fav_title" = "Liked Stickers";
+"detail_title" = "Sticker Detail";
+"alert_no_wechat" = "You may need to install Wechat";
+"alert_fav_succ" = "Liked successful";
+"alert_save_succ" = "Download successful";
+"alert_save_fail" = "Download failed, Please check the photo access permission";
+
+
+"user_my_fav" = "Liked Stickers";
+"user_feedback" = "I'd like to listen your voice";
+"user_appstore_comment" = "Write your comment at App Store";
+"user_share" =  "Share to my friends";
+"user_about" = "About Me";
+"about_title" = "About";
+
+
+
+"feedback_subject" = "『Mengmeng Stickers Feedback』：";
+"feedback_body" = "Hello Amon,";
+"share_title" = "Wow! 「Mengmeng Stickers」is so amazing!";

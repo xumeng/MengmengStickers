@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  萌萌表情包
+
+  Created by Amon on 16/4/12.
+  Copyright © 2016年 GodPlace. All rights reserved.
+*/
+
+
+/*
+ Localizable.strings
+ 萌萌表情包
+ 
+ Created by Amon on 16/4/12.
+ Copyright © 2016年 GodPlace. All rights reserved.
+ */
+
+"app_name" = "萌萌貼圖集";
+
+"main_title" = "熱門精選";
+"user_title" = "我嘅";
+
+"cate_doge" = "doge";
+"cate_guanzhang" = "Kim-gwanjang";
+"cate_weisuocat" = "猥瑣貓";
+"cate_yeliangchen" = "葉良辰";
+"cate_huangzitao" = "黃子韜";
+
+"show_all" = "顯示所有 >        ";
+"cate_detail_title" = "分類詳情";
+"fav_title" = "我嘅讚好";
+"detail_title" = "貼圖詳情";
+"alert_no_wechat" = "良辰提醒你沒有安裝WeChat";
+"alert_fav_succ" = "已讚好";
+"alert_save_succ" = "已儲存，是選擇發往Facebook還是twitter呢？";
+"alert_save_fail" = "儲存失敗，請檢查相冊權限設置";
+
+
+"user_my_fav" = "我嘅讚好";
+"user_feedback" = "良辰聆聽你的教誨";
+"user_appstore_comment" = "贈予好評，良辰必有重謝";
+"user_share" =  "給良辰個面子，分享至好友";
+"user_about" = "更多關於我良辰";
+"about_title" = "關於";
+
+
+"feedback_subject" = "『萌萌貼圖集試用反饋』：";
+"feedback_body" = "我愛繁體字";
+
+"share_title" = "若是你感覺有實力陪我玩，「萌萌貼圖集」不介意奉陪到底！";

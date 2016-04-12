@@ -9,6 +9,7 @@
 #import "UserViewController.h"
 #import "AboutViewController.h"
 #import "CategoryDetailViewController.h"
+#import "XMShareWechatUtil.h"
 
 #define kGKHeaderHeight 135.f
 #define kGKHeaderVisibleThreshold 44.f
@@ -39,7 +40,7 @@
 }
 
 - (void)initUI {
-    self.navigationItem.title = @"个人中心";
+    self.title = NSLocalizedString(@"user_title", nil);
     self.automaticallyAdjustsScrollViewInsets = NO;
 //    _mainView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
 //    _mainView.delegate = self;
@@ -64,7 +65,7 @@
     _tableView.sectionFooterHeight = 5;
     _tableView.tableHeaderView = self.headerView;
     [self.view addSubview:_tableView];
-    _tableView.contentInset = UIEdgeInsetsMake(-HEIGHT_OF_TOP_BAR, 0, 0, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(HEIGHT_OF_TOP_BAR, 0, 0, 0);
     
     UIImage *logoImg = [UIImage imageNamed:@"doge110.jpg"];
     _logoView = [[UIImageView alloc] init];
@@ -173,21 +174,21 @@
     
     if (indexPath.section == 0) {
         imageName = @"fav";
-        title = @"我的收藏";
+        title = NSLocalizedString(@"user_my_fav", nil);
     } else if (indexPath.section == 1) {
         if (indexPath.row == 0) {
             imageName = @"message";
-            title = @"良辰不介意你的吐槽";
+            title = NSLocalizedString(@"user_feedback", nil);
         } else if (indexPath.row == 1) {
             imageName = @"like";
-            title = @"给个好评，良辰必有重谢";
+            title = NSLocalizedString(@"user_appstore_comment", nil);
         } else if (indexPath.row == 2) {
             imageName = @"share";
-            title = @"给良辰个面子，介绍给好友";
+            title = NSLocalizedString(@"user_share", nil);
         }
     } else {
         imageName = @"focus";
-        title = @"更多关于我良辰";
+        title = NSLocalizedString(@"user_about", nil);
     }
     
     
@@ -233,8 +234,8 @@
 }
 
 - (void)gotoFeedback {
-    NSString *subject = @"听说你很屌";
-    NSString *body = @"今天来就是告诉你，";
+    NSString *subject = NSLocalizedString(@"feedback_subject", nil);
+    NSString *body = NSLocalizedString(@"feedback_body", nil);
     NSString *address = @"i@amonxu.com";
     NSString *path = [NSString stringWithFormat:@"mailto:%@?subject=%@&body=%@", address, subject, body];
     NSURL *url = [NSURL URLWithString:[path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -247,7 +248,10 @@
 }
 
 - (void)gotoShare {
-    
+    XMShareWechatUtil *util = [XMShareWechatUtil sharedInstance];
+    util.shareTitle = NSLocalizedString(@"share_title", nil);
+    util.shareUrl = APP_URL;
+    [util shareToWeixinTimeline];
 }
 
 - (void)gotoContactMe {

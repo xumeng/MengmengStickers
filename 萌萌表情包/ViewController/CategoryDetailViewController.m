@@ -28,7 +28,12 @@
 }
 
 - (void) initUI {
-    self.title = @"分类详情";
+    if (_isFav) {
+        self.title = NSLocalizedString(@"fav_title", nil);
+    } else {
+        self.title = NSLocalizedString(@"cate_detail_title", nil);
+    }
+    
     
     
     UICollectionViewFlowLayout *layout=[[ UICollectionViewFlowLayout alloc ] init];

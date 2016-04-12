@@ -27,7 +27,7 @@
 }
 
 - (void)initUI {
-    self.navigationItem.title = @"关于";
+    self.navigationItem.title = NSLocalizedString(@"about_title", nil);
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"？" style:UIBarButtonItemStylePlain target:self action:@selector(gotoMyWebsite)];
     
@@ -48,7 +48,8 @@
     
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     NSString *appCurVersionNum = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-    NSString *appName = [infoDictionary objectForKey:@"CFBundleName"];
+//    NSString *appName = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+    NSString *appName = NSLocalizedString(@"app_name", nil);
     
     NSString *nameText = [NSString stringWithFormat:@"%@ v%@", appName, appCurVersionNum];
     UILabel *nameLabel = [[UILabel alloc] init];

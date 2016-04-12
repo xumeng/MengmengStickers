@@ -28,6 +28,8 @@
 		3F3EE8281CBB913600A4A39C /* FavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EE8271CBB913600A4A39C /* FavViewController.m */; };
 		3F3EE82B1CBBAA2C00A4A39C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EE82A1CBBAA2C00A4A39C /* AboutViewController.m */; };
 		3F3EE82F1CBBAFEA00A4A39C /* ToolsUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EE82E1CBBAFEA00A4A39C /* ToolsUtil.m */; };
+		3F3EE8411CBD303600A4A39C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F3EE8431CBD303600A4A39C /* InfoPlist.strings */; };
+		3F3EE84A1CBD316200A4A39C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F3EE84C1CBD316200A4A39C /* Localizable.strings */; };
 		3F7A7C611B73364C005D9564 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7A7C601B73364C005D9564 /* libz.dylib */; };
 		3F7A7C631B733655005D9564 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7A7C621B733655005D9564 /* libc++.dylib */; };
 		3F7A7C651B73365A005D9564 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7A7C641B73365A005D9564 /* libsqlite3.0.dylib */; };
@@ -678,6 +680,17 @@
 		3F3EE82A1CBBAA2C00A4A39C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		3F3EE82D1CBBAFEA00A4A39C /* ToolsUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsUtil.h; sourceTree = "<group>"; };
 		3F3EE82E1CBBAFEA00A4A39C /* ToolsUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolsUtil.m; sourceTree = "<group>"; };
+		3F3EE83D1CBD2FC100A4A39C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		3F3EE83E1CBD2FCA00A4A39C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		3F3EE8441CBD303800A4A39C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		3F3EE8451CBD303B00A4A39C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		3F3EE8461CBD305200A4A39C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3F3EE8471CBD306000A4A39C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3F3EE84B1CBD316200A4A39C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3F3EE84D1CBD316400A4A39C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3F3EE84E1CBD316500A4A39C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3F3EE84F1CBD316700A4A39C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3F3EE8501CBD316D00A4A39C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3F7A7C191B731B91005D9564 /* 萌萌表情包.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "萌萌表情包.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7A7C601B73364C005D9564 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3F7A7C621B733655005D9564 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
@@ -1491,6 +1504,8 @@
 		3F7A7C101B731B91005D9564 = {
 			isa = PBXGroup;
 			children = (
+				3F3EE84C1CBD316200A4A39C /* Localizable.strings */,
+				3F3EE8431CBD303600A4A39C /* InfoPlist.strings */,
 				3F9B10721CB1585C0026C1ED /* 萌萌表情包 */,
 				3F7A7C7C1B7336E6005D9564 /* Frameworks */,
 				3F7A7C1A1B731B91005D9564 /* Products */,
@@ -2569,8 +2584,10 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
+				en,
 			);
 			mainGroup = 3F7A7C101B731B91005D9564;
 			productRefGroup = 3F7A7C1A1B731B91005D9564 /* Products */;
@@ -2678,6 +2695,7 @@
 				3F9B14A61CB2635F0026C1ED /* guanzhang137.jpg in Resources */,
 				3F9B14E21CB2635F0026C1ED /* guanzhang191.jpg in Resources */,
 				3F9B14E31CB2635F0026C1ED /* guanzhang192.jpg in Resources */,
+				3F3EE8411CBD303600A4A39C /* InfoPlist.strings in Resources */,
 				3F9B12B11CB15D820026C1ED /* doge67.jpg in Resources */,
 				3F9B16161CB263F70026C1ED /* goudai32.jpg in Resources */,
 				3F9B15271CB2635F0026C1ED /* guanzhang30.jpg in Resources */,
@@ -2725,6 +2743,7 @@
 				3F9B15491CB2635F0026C1ED /* guanzhang61.jpg in Resources */,
 				3F9B14BC1CB2635F0026C1ED /* guanzhang157.jpg in Resources */,
 				3F9B126B1CB15D820026C1ED /* doge103.jpg in Resources */,
+				3F3EE84A1CBD316200A4A39C /* Localizable.strings in Resources */,
 				3F9B14C91CB2635F0026C1ED /* guanzhang169.jpg in Resources */,
 				3F9B12671CB15D820026C1ED /* doge10.jpg in Resources */,
 				3F9B15001CB2635F0026C1ED /* guanzhang218.jpg in Resources */,
@@ -3227,10 +3246,37 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		3F3EE8431CBD303600A4A39C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F3EE8441CBD303800A4A39C /* zh-Hans */,
+				3F3EE8451CBD303B00A4A39C /* zh-Hant */,
+				3F3EE8471CBD306000A4A39C /* en */,
+				3F3EE8501CBD316D00A4A39C /* Base */,
+			);
+			name = InfoPlist.strings;
+			path = "萌萌表情包";
+			sourceTree = "<group>";
+		};
+		3F3EE84C1CBD316200A4A39C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F3EE84B1CBD316200A4A39C /* zh-Hans */,
+				3F3EE84D1CBD316400A4A39C /* zh-Hant */,
+				3F3EE84E1CBD316500A4A39C /* en */,
+				3F3EE84F1CBD316700A4A39C /* Base */,
+			);
+			name = Localizable.strings;
+			path = "萌萌表情包";
+			sourceTree = "<group>";
+		};
 		3F9B10761CB1585C0026C1ED /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3F9B10771CB1585C0026C1ED /* Base */,
+				3F3EE83D1CBD2FC100A4A39C /* zh-Hans */,
+				3F3EE83E1CBD2FCA00A4A39C /* zh-Hant */,
+				3F3EE8461CBD305200A4A39C /* en */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -3342,7 +3388,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amonxu.funweixin;
 				PRODUCT_NAME = "萌萌表情包";
-				PROVISIONING_PROFILE = "e762c58b-081b-4eaa-b5ff-9855ab54fa92";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -3369,7 +3415,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amonxu.funweixin;
 				PRODUCT_NAME = "萌萌表情包";
-				PROVISIONING_PROFILE = "e762c58b-081b-4eaa-b5ff-9855ab54fa92";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

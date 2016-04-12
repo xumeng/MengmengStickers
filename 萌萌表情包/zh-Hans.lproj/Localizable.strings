@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  萌萌表情包
+
+  Created by Amon on 16/4/12.
+  Copyright © 2016年 GodPlace. All rights reserved.
+*/
+
+"app_name" = "萌萌表情包";
+
+"main_title" = "热门推荐";
+"user_title" = "我的";
+
+"cate_doge" = "doge";
+"cate_guanzhang" = "金馆长";
+"cate_weisuocat" = "猥琐猫";
+"cate_yeliangchen" = "叶良辰";
+"cate_huangzitao" = "黄子韬";
+
+"show_all" = "显示全部 >        ";
+"cate_detail_title" = "分类详情";
+"fav_title" = "我的收藏";
+"detail_title" = "表情详情";
+"alert_no_wechat" = "良辰提醒你没有装微信，不能好好的玩耍了～";
+"alert_fav_succ" = "收藏成功，又可以去装X了";
+"alert_save_succ" = "保存成功，可以去其它地方装X了";
+"alert_save_fail" = "良辰提醒你存储失败，请检查相册权限设置";
+
+
+"user_my_fav" = "我的收藏";
+"user_feedback" = "良辰不介意你的吐槽";
+"user_appstore_comment" = "给个好评，良辰必有重谢";
+"user_share" =  "给良辰个面子，介绍给好友";
+"user_about" = "更多关于我良辰";
+"about_title" = "关于";
+
+
+"feedback_subject" = "『萌萌表情包使用反馈』：";
+"feedback_body" = "今天来就是告诉你，";
+
+"share_title" = "若是你感觉有实力陪我玩，『萌萌表情包』不介意奉陪到底！";

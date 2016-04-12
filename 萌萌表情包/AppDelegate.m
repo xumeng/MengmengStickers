@@ -69,8 +69,8 @@
     GKFadeNavigationController *nav1 = [[GKFadeNavigationController alloc] initWithRootViewController:homeVC];
     GKFadeNavigationController *nav2 = [[GKFadeNavigationController alloc] initWithRootViewController:userVC];
     
-    nav1.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"热门"  image:nil tag:0];
-    nav2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我的"  image:nil tag:1];
+    nav1.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"main_title", nil)  image:nil tag:0];
+    nav2.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"user_title", nil)  image:nil tag:1];
     
     [nav1.tabBarItem setImage:[[UIImage imageNamed:@"icon_home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [nav1.tabBarItem setSelectedImage:[[UIImage imageNamed:@"icon_home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];

@@ -23,9 +23,12 @@
 
 - (void)shareToWeixinTimeline
 {
+    if (self.shareUrl) {
+        [self shareToWeixinBase:WXSceneTimeline];
+    } else {
+        [self shareStickersToWeixinBase:WXSceneTimeline];
+    }
     
-//    [self shareToWeixinBase:WXSceneTimeline];
-    [self shareStickersToWeixinBase:WXSceneTimeline];
 }
 
 - (void)shareToWeixinBase:(enum WXScene)scene
@@ -34,7 +37,13 @@
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = self.shareTitle;
     message.description = self.shareText;
-    [message setThumbImage:SHARE_IMG];
+    UIImage *thumbImage;
+    if (self.shareImageData) {
+        thumbImage = [UIImage imageWithData:self.shareImageData];
+    } else {
+        thumbImage = SHARE_IMG;
+    }
+    [message setThumbImage:thumbImage];
     
     WXWebpageObject *ext = [WXWebpageObject object];
     ext.webpageUrl = self.shareUrl;

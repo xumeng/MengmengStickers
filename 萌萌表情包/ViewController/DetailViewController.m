@@ -36,7 +36,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [UIView animateWithDuration:.8 delay:0 usingSpringWithDamping:.5 initialSpringVelocity:5 options:nil animations:^{
+    [UIView animateWithDuration:.5 delay:0 usingSpringWithDamping:.5 initialSpringVelocity:5 options:nil animations:^{
         shareView.top = _imageView.bottom + 10;
         shareView.left = 10;
 //        shareView.width = WIDTH(self.view)-20;
@@ -50,7 +50,7 @@
 
 
 - (void)initUI {
-    self.title = @"表情详情";
+    self.title = NSLocalizedString(@"detail_title", nil);
 
     _imageView = [[YYAnimatedImageView alloc] initWithImage:paramImage];
 //    CGFloat imageSize = WIDTH(self.view)-20;
@@ -73,6 +73,7 @@
     [self.view addSubview:shareView];
     
     
+    BOOL hadInstalledWeixin = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"weixin://"]];
     
     UIButton *wechatButton = [[UIButton alloc] init];
     [wechatButton setImage:[UIImage imageNamed:@"icon_wechat"] forState:UIControlStateNormal];
@@ -80,7 +81,7 @@
     [shareView addSubview:wechatButton];
     
     [wechatButton sizeToFit];
-    wechatButton.centerX = WIDTH(shareView) / 4 * 1;
+    wechatButton.centerX = WIDTH(shareView) / 3 * 1;
     wechatButton.centerY = shareView.height/2;
     
     
@@ -90,18 +91,24 @@
     [shareView addSubview:timelineButton];
     
     [timelineButton sizeToFit];
-    timelineButton.centerX = WIDTH(shareView) / 4 * 2;
+    timelineButton.centerX = WIDTH(shareView) / 3 * 2;
     timelineButton.centerY = shareView.height/2;
     
+    if (!hadInstalledWeixin) {
+        wechatButton.hidden = YES;
+        timelineButton.hidden = YES;
+        [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"alert_no_wechat", nil)];
+    }
     
-    UIButton *qqButton = [[UIButton alloc] init];
-    [qqButton setImage:[UIImage imageNamed:@"icon_qq"] forState:UIControlStateNormal];
-    [qqButton addTarget:self action:@selector(shareToQQ) forControlEvents:UIControlEventTouchUpInside];
-    [shareView addSubview:qqButton];
     
-    [qqButton sizeToFit];
-    qqButton.centerX = WIDTH(shareView) / 4 * 3;
-    qqButton.centerY = shareView.height/2;
+//    UIButton *qqButton = [[UIButton alloc] init];
+//    [qqButton setImage:[UIImage imageNamed:@"icon_qq"] forState:UIControlStateNormal];
+//    [qqButton addTarget:self action:@selector(shareToQQ) forControlEvents:UIControlEventTouchUpInside];
+//    [shareView addSubview:qqButton];
+//    
+//    [qqButton sizeToFit];
+//    qqButton.centerX = WIDTH(shareView) / 4 * 3;
+//    qqButton.centerY = shareView.height/2;
     
     
     UIButton *favButton = [[UIButton alloc] init];
@@ -111,7 +118,7 @@
     
     [favButton sizeToFit];
 //    favButton.centerX = shareView.centerX/2;
-    favButton.left = wechatButton.right;
+    favButton.centerX = wechatButton.centerX;
     favButton.top = wechatButton.bottom + 20;
     
     
@@ -122,7 +129,7 @@
     
     [downloadButton sizeToFit];
 //    downloadButton.centerX = shareView.centerX/2*3;
-    downloadButton.left = timelineButton.right;
+    downloadButton.centerX = timelineButton.centerX;
     downloadButton.top = wechatButton.bottom + 20;
     
 }
@@ -149,9 +156,10 @@
 {
     
     XMShareWechatUtil *util = [XMShareWechatUtil sharedInstance];
-//    util.shareTitle = self.shareTitle;
-//    util.shareText = self.shareText;
-//    util.shareUrl = self.shareUrl;
+    util.shareTitle = NSLocalizedString(@"share_title", nil);
+    util.shareUrl = APP_URL;
+    
+    util.shareImageData = UIImageJPEGRepresentation(paramImage, .75);
     
     [util shareToWeixinTimeline];
     
@@ -183,7 +191,7 @@
         [userDict setValue:favList forKey:@"favList"];
         [ToolsUtil saveUserConfigToNSUserDefaults:userDict];
     }
-    [SVProgressHUD showSuccessWithStatus:@"收藏成功"];
+    [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"alert_fav_succ", nil)];
 }
 
 - (void)gotoSave {
@@ -191,9 +199,9 @@
     [library writeImageToSavedPhotosAlbum:paramImage.CGImage orientation:(ALAssetOrientation)paramImage.imageOrientation completionBlock:^(NSURL *asSetUrl,NSError *error){
         if (error) {
             //失败
-            [SVProgressHUD showInfoWithStatus:@"存储失败，请检查相册权限设置" maskType:SVProgressHUDMaskTypeClear];
+            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"alert_save_fail", nil)];
         }else{
-            [SVProgressHUD showInfoWithStatus:@"存储成功" maskType:SVProgressHUDMaskTypeClear];
+            [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"alert_save_succ", nil)];
         }
     }];
 }

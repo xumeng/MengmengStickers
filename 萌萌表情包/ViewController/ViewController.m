@@ -49,7 +49,7 @@
 //    UIImageView *imageView = [[YYAnimatedImageView alloc] initWithImage:image];
 //    [self.view addSubview:imageView];
     
-    self.title = @"热门推荐";
+    self.title = NSLocalizedString(@"main_title", nil);
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     _tableView.delegate = self;
@@ -67,7 +67,13 @@
 
 - (void)configureData {
     
-    _groupTitleList = @[  @"doge", @"金馆长", @"猥琐猫", @"叶良辰", @"黄子韬"];
+    _groupTitleList = @[
+                           NSLocalizedString(@"cate_doge", nil),
+                           NSLocalizedString(@"cate_guanzhang", nil),
+                           NSLocalizedString(@"cate_weisuocat", nil),
+                           NSLocalizedString(@"cate_yeliangchen", nil),
+                           NSLocalizedString(@"cate_huangzitao", nil)
+                       ];
     
     _dogeItemList = [[NSMutableArray alloc] init];
     _kingItemList = [[NSMutableArray alloc] init];
