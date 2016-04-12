@@ -10,7 +10,7 @@
 #import "AboutViewController.h"
 #import "CategoryDetailViewController.h"
 
-#define kGKHeaderHeight 175.f*SCALE_OF_IPHONE6_SCREEN
+#define kGKHeaderHeight 135.f
 #define kGKHeaderVisibleThreshold 44.f
 #define kGKNavbarHeight 64.f
 
