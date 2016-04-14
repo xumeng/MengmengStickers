@@ -27,3 +27,8 @@ DerivedData
 
 # Amon Custom
 *.a
+*.gif
+*.jpg
+*.jpeg
+Resource/
+Vendor/
