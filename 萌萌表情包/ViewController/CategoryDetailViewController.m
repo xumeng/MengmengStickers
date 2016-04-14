@@ -25,6 +25,40 @@
         _favList = userDict[@"favList"];
         _itemCount = _favList.count;
     }
+    
+    if ([_categoryName isEqualToString:CATE_NAME_DOGE]) {
+        
+        [self addUmengEvent:LOOK_CATE_DOGE];
+        
+    } else if ([_categoryName isEqualToString:CATE_NAME_GUANZHANG]) {
+        
+        [self addUmengEvent:LOOK_CATE_GUANZHANG];
+        
+    } else if ([_categoryName isEqualToString:CATE_NAME_WEISUOCAT]) {
+        
+        [self addUmengEvent:LOOK_CATE_WEISUOCAT];
+        
+    } else if ([_categoryName isEqualToString:CATE_NAME_LIUBA]) {
+        
+        [self addUmengEvent:LOOK_CATE_LIUBA];
+        
+    } else if ([_categoryName isEqualToString:CATE_NAME_EGAOTU]) {
+        
+        [self addUmengEvent:LOOK_CATE_EGAOTU];
+        
+    } else if ([_categoryName isEqualToString:CATE_NAME_EGAOGUANZHANG]) {
+        
+        [self addUmengEvent:LOOK_CATE_EGAOGUANZHANG];
+        
+    } else if ([_categoryName isEqualToString:CATE_NAME_LIANGCHEN]) {
+        
+        [self addUmengEvent:LOOK_CATE_LIANGCHEN];
+        
+    } else if ([_categoryName isEqualToString:CATE_NAME_GOUDAI]) {
+        
+        [self addUmengEvent:LOOK_CATE_GOUDAI];
+        
+    }
 }
 
 - (void) initUI {
@@ -127,13 +161,13 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self addUmengEvent:CATE_SHOW_DETAIL];
     NSString *imgName;
     if (_isFav) {
         imgName = _favList[indexPath.item];
     } else {
         imgName = [NSString stringWithFormat:@"%@%ld", _categoryName, indexPath.item+1];
     }
-    
     DetailViewController *vc = [[DetailViewController alloc] init];
     UIImageView *selectImageView = [[collectionView cellForItemAtIndexPath:indexPath].contentView viewWithTag:999];
     vc.paramImage = selectImageView.image;

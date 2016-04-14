@@ -55,5 +55,15 @@
     return [self getUserDefaults:@"AppConfig"];
 }
 
++ (NSString *)getAppFullVerion
+{
+    NSDictionary *appInfoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString *shortVersion = [appInfoDict objectForKey:@"CFBundleShortVersionString"];
+    NSString *buildVersion = [appInfoDict objectForKey:@"CFBundleVersion"];
+    
+    return [NSString stringWithFormat:@"%@.%@", shortVersion, buildVersion];
+}
+
+
 
 @end

@@ -77,6 +77,7 @@
 }
 
 - (void)gotoMyWebsite {
+    [self addUmengEvent:ABOUT_OPEN_WEBSITE];
     NSString *urlString = @"http://amonxu.com";
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
 }

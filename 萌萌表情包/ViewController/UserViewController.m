@@ -205,17 +205,22 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.section == 0) {
+        [self addUmengEvent:USER_SHOW_FAV];
         [self gotoShowFav];
     } else if (indexPath.section == 1) {
         if (indexPath.row == 0) {
+            [self addUmengEvent:USER_FEEDBACK];
             [self gotoFeedback];
         } else if (indexPath.row == 1) {
+            [self addUmengEvent:USER_COMMENT];
             [self gotoAppStoreComment];
         } else if (indexPath.row == 2) {
+            [self addUmengEvent:USER_SHARE];
             [self gotoShare];
         }
     } else {
         if (indexPath.row == 0) {
+            [self addUmengEvent:USER_ABOUT];
             [self gotoContactMe];
         }
     }

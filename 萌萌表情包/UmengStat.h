@@ -1,0 +1,51 @@
+//
+//  UmengStat.h
+//  萌萌表情包
+//
+//  Created by Amon on 16/4/14.
+//  Copyright © 2016年 GodPlace. All rights reserved.
+//
+
+#ifndef UmengStat_h
+#define UmengStat_h
+
+#define HOME_SHOW_DETAIL          @"HOME_SHOW_DETAIL"
+#define HOME_SHOW_CATEGORY        @"HOME_SHOW_CATEGORY"
+
+#define CATE_SHOW_DETAIL          @"CATE_SHOW_DETAIL"
+
+#define DETAIL_SHARE_WECHAT       @"DETAIL_SHARE_WECHAT"
+#define DETAIL_SHARE_QQ           @"DETAIL_SHARE_QQ"
+#define DETAIL_SHARE_TIMELINE     @"DETAIL_SHARE_TIMELINE"
+#define DETAIL_FAV                @"DETAIL_FAV"
+#define DETAIL_DOWNLOAD           @"DETAIL_DOWNLOAD"
+
+#define USER_SHOW_FAV             @"USER_SHOW_FAV"
+#define USER_FEEDBACK             @"USER_FEEDBACK"
+#define USER_COMMENT              @"USER_COMMENT"
+#define USER_SHARE                @"USER_SHARE"
+#define USER_ABOUT                @"USER_ABOUT"
+
+#define ABOUT_OPEN_WEBSITE        @"ABOUT_OPEN_WEBSITE"
+
+
+#define LOOK_CATE_LIUBA           @"LOOK_CATE_LIUBA"
+#define LOOK_CATE_EGAOGUANZHANG   @"LOOK_CATE_EGAOGUANZHANG"
+#define LOOK_CATE_EGAOTU          @"LOOK_CATE_EGAOTU"
+#define LOOK_CATE_GOUDAI          @"LOOK_CATE_GOUDAI"
+#define LOOK_CATE_GUANZHANG       @"LOOK_CATE_GUANZHANG"
+#define LOOK_CATE_LIANGCHEN       @"LOOK_CATE_LIANGCHEN"
+#define LOOK_CATE_WEISUOCAT       @"LOOK_CATE_WEISUOCAT"
+#define LOOK_CATE_DOGE            @"LOOK_CATE_DOGE"
+
+
+#define LOOK_DETAIL_LIUBA         @"LOOK_DETAIL_LIUBA"
+#define LOOK_DETAIL_EGAOGUANZHANG @"LOOK_DETAIL_EGAOGUANZHANG"
+#define LOOK_DETAIL_EGAOTU        @"LOOK_DETAIL_EGAOTU"
+#define LOOK_DETAIL_GOUDAI        @"LOOK_DETAIL_GOUDAI"
+#define LOOK_DETAIL_GUANZHANG     @"LOOK_DETAIL_GUANZHANG"
+#define LOOK_DETAIL_LIANGCHEN     @"LOOK_DETAIL_LIANGCHEN"
+#define LOOK_DETAIL_WEISUOCAT     @"LOOK_DETAIL_WEISUOCAT"
+#define LOOK_DETAIL_DOGE          @"LOOK_DETAIL_DOGE"
+
+#endif /* UmengStat_h */

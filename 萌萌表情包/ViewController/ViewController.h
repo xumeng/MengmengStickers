@@ -6,11 +6,11 @@
 //  Copyright (c) 2015年 GodPlace. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 #import "WXApi.h"
 
 @class ListItem;
-@interface ViewController : UIViewController<WXApiDelegate>
+@interface ViewController : BaseViewController<WXApiDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 

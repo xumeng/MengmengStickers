@@ -36,6 +36,15 @@
 //  狗带列表
 @property (nonatomic, strong) NSMutableArray *goudaiItemList;
 
+//  68列表
+@property (nonatomic, strong) NSMutableArray *liubaItemList;
+
+//  恶搞兔列表
+@property (nonatomic, strong) NSMutableArray *egaotuItemList;
+
+//  恶搞馆长列表
+@property (nonatomic, strong) NSMutableArray *egaoguanzhangItemList;
+
 @end
 
 #define kCellHeight 150.f
@@ -71,8 +80,11 @@
                            NSLocalizedString(@"cate_doge", nil),
                            NSLocalizedString(@"cate_guanzhang", nil),
                            NSLocalizedString(@"cate_weisuocat", nil),
+                           NSLocalizedString(@"cate_68", nil),
+                           NSLocalizedString(@"cate_egaotu", nil),
+                           NSLocalizedString(@"cate_egaoguanzhang", nil),
                            NSLocalizedString(@"cate_yeliangchen", nil),
-                           NSLocalizedString(@"cate_huangzitao", nil)
+                           NSLocalizedString(@"cate_huangzitao", nil),
                        ];
     
     _dogeItemList = [[NSMutableArray alloc] init];
@@ -80,6 +92,9 @@
     _baobaoItemList = [[NSMutableArray alloc] init];
     _liangchenItemList = [[NSMutableArray alloc] init];
     _goudaiItemList = [[NSMutableArray alloc] init];
+    _liubaItemList = [[NSMutableArray alloc] init];
+    _egaotuItemList = [[NSMutableArray alloc] init];
+    _egaoguanzhangItemList = [[NSMutableArray alloc] init];
     
 
     
@@ -111,6 +126,36 @@
                                                 imageUrl:imgName];
         item1.objectTag = @(i);
         [_baobaoItemList addObject:item1];
+    }
+    
+    for (NSInteger i =1; i<13; i++) {
+        NSString *imgName = [NSString stringWithFormat:@"68%ld", i];
+        ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero
+                                                   image:[YYImage imageNamed:imgName]
+                                                    text:NSLocalizedString(@"doge正常", nil)
+                                                imageUrl:imgName];
+        item1.objectTag = @(i);
+        [_liubaItemList addObject:item1];
+    }
+    
+    for (NSInteger i =1; i<13; i++) {
+        NSString *imgName = [NSString stringWithFormat:@"egaotu%ld", i];
+        ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero
+                                                   image:[YYImage imageNamed:imgName]
+                                                    text:NSLocalizedString(@"doge正常", nil)
+                                                imageUrl:imgName];
+        item1.objectTag = @(i);
+        [_egaotuItemList addObject:item1];
+    }
+    
+    for (NSInteger i =1; i<13; i++) {
+        NSString *imgName = [NSString stringWithFormat:@"egaoguanzhang%ld", i];
+        ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero
+                                                   image:[YYImage imageNamed:imgName]
+                                                    text:NSLocalizedString(@"doge正常", nil)
+                                                imageUrl:imgName];
+        item1.objectTag = @(i);
+        [_egaoguanzhangItemList addObject:item1];
     }
     
     for (NSInteger i =1; i<13; i++) {
@@ -171,27 +216,42 @@
         if ([indexPath row] == 0) {
             
             list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_dogeItemList];
-            list.categoryName = @"doge";
+            list.categoryName = CATE_NAME_DOGE;
             list.itemCount = 111;
         } else if ([indexPath row] == 1) {
             
             list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_kingItemList];
-            list.categoryName = @"guanzhang";
+            list.categoryName = CATE_NAME_GUANZHANG;
             list.itemCount = 247;
         } else if ([indexPath row] == 2) {
             
             list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_baobaoItemList];
-            list.categoryName = @"mao";
+            list.categoryName = CATE_NAME_WEISUOCAT;
             list.itemCount = 61;
         } else if ([indexPath row] == 3) {
             
+            list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_liubaItemList];
+            list.categoryName = CATE_NAME_LIUBA;
+            list.itemCount = 83;
+        }  else if ([indexPath row] == 4) {
+            
+            list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_egaotuItemList];
+            list.categoryName = CATE_NAME_EGAOTU;
+            list.itemCount = 103;
+        }  else if ([indexPath row] == 5) {
+            
+            list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_egaoguanzhangItemList];
+            list.categoryName = CATE_NAME_EGAOGUANZHANG;
+            list.itemCount = 87;
+        }  else if ([indexPath row] == 6) {
+            
             list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_liangchenItemList];
-            list.categoryName = @"liangchen";
+            list.categoryName = CATE_NAME_LIANGCHEN;
             list.itemCount = 41;
-        } else if ([indexPath row] == 4) {
+        } else if ([indexPath row] == 7) {
             
             list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_goudaiItemList];
-            list.categoryName = @"goudai";
+            list.categoryName = CATE_NAME_GOUDAI;
             list.itemCount = 33;
         }
     
@@ -215,6 +275,7 @@
 
 - (void)didSelectItem:(ListItem *)item {
     _currentItem = item;
+    [self addUmengEvent:HOME_SHOW_DETAIL];
     DetailViewController *vc = [[DetailViewController alloc] init];
     vc.paramImage = item.image;
     vc.paramImageName = item.imageUrl;
@@ -224,6 +285,7 @@
 }
 
 - (void)showCategoryDetail:(NSString *)categoryName itemCount:(NSInteger)itemCount {
+    [self addUmengEvent:HOME_SHOW_CATEGORY];
     CategoryDetailViewController *vc = [[CategoryDetailViewController alloc] init];
     vc.categoryName = categoryName;
     vc.itemCount = itemCount;

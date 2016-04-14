@@ -11,10 +11,11 @@
 #import "AppMacro.h"
 #import "Constants.h"
 #import "GKFadeNavigationController.h"
-
 #import "ViewController.h"
 #import "UserViewController.h"
+#import "ToolsUtil.h"
 
+#import "MobClick.h"
 
 @interface AppDelegate ()<WeiboSDKDelegate, QQApiInterfaceDelegate>
 
@@ -138,8 +139,11 @@
 {
     [WXApi registerApp:APP_KEY_WEIXIN];
     
-    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK enableDebugMode:NO];
     [WeiboSDK registerApp:APP_KEY_WEIBO];
+    
+    [MobClick setAppVersion:[ToolsUtil getAppFullVerion]];
+    [MobClick startWithAppkey:APP_KEY_UMENG reportPolicy:BATCH channelId:@"App Store"];
 }
 
 #pragma mark - 实现代理回调

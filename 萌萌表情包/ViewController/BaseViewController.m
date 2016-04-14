@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "MobClick.h"
 
 @implementation BaseViewController
 
@@ -66,5 +67,17 @@
     }
     
 }
+
+- (void)umengEvent:(NSString *)eventId attributes:(NSDictionary *)attributes number:(NSNumber *)number {
+    NSString *numberKey = @"__ct__";
+    NSMutableDictionary *mutableDictionary = [NSMutableDictionary dictionaryWithDictionary:attributes];
+    [mutableDictionary setObject:[number stringValue] forKey:numberKey];
+    [MobClick event:eventId attributes:mutableDictionary];
+}
+
+- (void)addUmengEvent:(NSString *)eventId {
+    [MobClick event:eventId];
+}
+
 
 @end

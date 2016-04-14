@@ -48,6 +48,42 @@
     
 }
 
+- (void)configureData {
+    if ([paramImageName hasPrefix:CATE_NAME_DOGE]) {
+        
+        [self addUmengEvent:LOOK_DETAIL_DOGE];
+        
+    } else if ([paramImageName hasPrefix:CATE_NAME_GUANZHANG]) {
+        
+        [self addUmengEvent:LOOK_DETAIL_GUANZHANG];
+        
+    } else if ([paramImageName hasPrefix:CATE_NAME_WEISUOCAT]) {
+        
+        [self addUmengEvent:LOOK_DETAIL_WEISUOCAT];
+        
+    } else if ([paramImageName hasPrefix:CATE_NAME_LIUBA]) {
+        
+        [self addUmengEvent:LOOK_DETAIL_LIUBA];
+        
+    } else if ([paramImageName hasPrefix:CATE_NAME_EGAOTU]) {
+        
+        [self addUmengEvent:LOOK_DETAIL_EGAOTU];
+        
+    } else if ([paramImageName hasPrefix:CATE_NAME_EGAOGUANZHANG]) {
+        
+        [self addUmengEvent:LOOK_DETAIL_EGAOGUANZHANG];
+        
+    } else if ([paramImageName hasPrefix:CATE_NAME_LIANGCHEN]) {
+        
+        [self addUmengEvent:LOOK_DETAIL_LIANGCHEN];
+        
+    } else if ([paramImageName hasPrefix:CATE_NAME_GOUDAI]) {
+        
+        [self addUmengEvent:LOOK_DETAIL_GOUDAI];
+        
+    }
+}
+
 
 - (void)initUI {
     self.title = NSLocalizedString(@"detail_title", nil);
@@ -143,6 +179,7 @@
 
 - (void)shareToWeixinSession
 {
+    [self addUmengEvent:DETAIL_SHARE_WECHAT];
     XMShareWechatUtil *util = [XMShareWechatUtil sharedInstance];
 //    util.shareTitle = @"Hello";
 //    util.shareText = @"hehe";
@@ -154,7 +191,7 @@
 
 - (void)shareToWeixinTimeline
 {
-    
+    [self addUmengEvent:DETAIL_SHARE_TIMELINE];
     XMShareWechatUtil *util = [XMShareWechatUtil sharedInstance];
     util.shareTitle = NSLocalizedString(@"share_title", nil);
     util.shareUrl = APP_URL;
@@ -167,6 +204,7 @@
 
 - (void)shareToQQ
 {
+    [self addUmengEvent:DETAIL_SHARE_QQ];
     XMShareQQUtil *util = [XMShareQQUtil sharedInstance];
 //    util.shareTitle = self.shareTitle;
 //    util.shareText = self.shareText;
@@ -176,6 +214,7 @@
 }
 
 - (void)gotoFav {
+    [self addUmengEvent:DETAIL_FAV];
     NSDictionary *userDict = [ToolsUtil getUserConfig];
     NSMutableArray *favList = userDict[@"favList"];
     if (!favList) {
@@ -195,6 +234,7 @@
 }
 
 - (void)gotoSave {
+    [self addUmengEvent:DETAIL_DOWNLOAD];
     ALAssetsLibrary *library = [[ALAssetsLibrary alloc]init];
     [library writeImageToSavedPhotosAlbum:paramImage.CGImage orientation:(ALAssetOrientation)paramImage.imageOrientation completionBlock:^(NSURL *asSetUrl,NSError *error){
         if (error) {

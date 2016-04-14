@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UIView+YYAdd.h"
 #import "Constants.h"
+#import "UmengStat.h"
 #import "AppMacro.h"
 #import "SVProgressHUD.h"
 
@@ -34,5 +35,13 @@
  */
 - (void)gotoBack;
 
+/**
+ *  添加友盟埋点
+ *
+ *  @param eventId 事件ID
+ */
+- (void)addUmengEvent:(NSString *)eventId;
+
+- (void)umengEvent:(NSString *)eventId attributes:(NSDictionary *)attributes number:(NSNumber *)number;
 
 @end

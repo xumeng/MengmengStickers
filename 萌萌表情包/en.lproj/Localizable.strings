@@ -8,7 +8,7 @@
 
 "app_name" = "Mengmeng Stickers";
 
-"main_title" = "Hot";
+"main_title" = "HOT";
 "user_title" = "Me";
 
 "cate_doge" = "doge";
@@ -16,6 +16,9 @@
 "cate_weisuocat" = "Face Cat";
 "cate_yeliangchen" = "Ye Liangchen";
 "cate_huangzitao" = "Huang Zitao";
+"cate_68" = "Kim-gwanjang 68";
+"cate_egaotu" = "Spoof Rabbit";
+"cate_egaoguanzhang" = "Spoof Kim-gwanjang";
 
 "show_all" = "Show All >        ";
 "cate_detail_title" = "Sticker Category";

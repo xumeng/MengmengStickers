@@ -45,7 +45,7 @@
 //        [titleLabel setShadowColor:[UIColor whiteColor]];
 //        [titleLabel setShadowOffset:CGSizeMake(1.0, 1.0)];
         [titleLabel setOpaque:YES];
-        [titleLabel setBackgroundColor:[UIColor clearColor]];
+        [titleLabel setBackgroundColor:[UIColor whiteColor]];
         [self addSubview:titleLabel];
         
         UIButton *showAllButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width-10, TITLE_HEIGHT)];

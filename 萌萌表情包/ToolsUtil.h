@@ -55,5 +55,7 @@
  */
 + (NSDictionary *)getAppConfig;
 
++ (NSString *)getAppFullVerion;
+
 
 @end
