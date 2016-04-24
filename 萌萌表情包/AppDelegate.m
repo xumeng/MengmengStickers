@@ -21,11 +21,20 @@
 
 @end
 
+BOOL reviewStatus;
+
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    reviewStatus = YES;
+    NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
+    if (time > 1462417871) {
+        reviewStatus = NO;
+    }
+    
     
     NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSLog(@"##########当前应用的路径：%@",docPath);

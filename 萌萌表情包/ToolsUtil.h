@@ -57,5 +57,25 @@
 
 + (NSString *)getAppFullVerion;
 
++ (NSDateComponents *)getNSDateComponents;
+
++ (NSDateComponents *)getNSDateComponentsByDate:(NSDate *)date;
+
++ (NSInteger)getCurrentYear;
+
++ (NSInteger)getCurrentMonth;
+
++ (NSInteger)getCurrentDay;
+
++ (NSInteger)getCurrentYearByDate:(NSDate *)date;
+
++ (NSInteger)getCurrentMonth:(NSDate *)date;
+
++ (NSInteger)getCurrentDay:(NSDate *)date;
+
++(NSString *) compareCurrentTime:(double)inServerTime;
+
++ (NSString *)getCountdownDay:(NSString *)targetDate;
+
 
 @end

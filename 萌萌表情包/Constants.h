@@ -21,7 +21,7 @@
 #define CATE_NAME_WEISUOCAT @"mao"
 #define CATE_NAME_LIUBA @"68"
 #define CATE_NAME_EGAOTU @"egaotu"
-#define CATE_NAME_EGAOGUANZHANG @"egaoguanzhanag"
+#define CATE_NAME_EGAOGUANZHANG @"egaoguanzhang"
 #define CATE_NAME_LIANGCHEN @"liangchen"
 #define CATE_NAME_GOUDAI @"goudai"
 

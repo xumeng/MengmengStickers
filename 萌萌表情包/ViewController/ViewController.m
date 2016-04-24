@@ -49,14 +49,12 @@
 
 #define kCellHeight 150.f
 
+extern BOOL reviewStatus;
+
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-//    UIImage *image = [YYImage imageNamed:@"1.jpeg"];
-//    UIImageView *imageView = [[YYAnimatedImageView alloc] initWithImage:image];
-//    [self.view addSubview:imageView];
     
     self.title = NSLocalizedString(@"main_title", nil);
     
@@ -76,16 +74,27 @@
 
 - (void)configureData {
     
-    _groupTitleList = @[
-                           NSLocalizedString(@"cate_doge", nil),
-                           NSLocalizedString(@"cate_guanzhang", nil),
-                           NSLocalizedString(@"cate_weisuocat", nil),
-                           NSLocalizedString(@"cate_68", nil),
-                           NSLocalizedString(@"cate_egaotu", nil),
-                           NSLocalizedString(@"cate_egaoguanzhang", nil),
-                           NSLocalizedString(@"cate_yeliangchen", nil),
-                           NSLocalizedString(@"cate_huangzitao", nil),
-                       ];
+    if (reviewStatus) {
+        _groupTitleList = @[
+                            NSLocalizedString(@"cate_doge", nil),
+                            NSLocalizedString(@"cate_68", nil),
+                            NSLocalizedString(@"cate_egaotu", nil),
+                            NSLocalizedString(@"cate_egaoguanzhang", nil),
+                            NSLocalizedString(@"cate_guanzhang", nil),
+                            ];
+    } else {
+        _groupTitleList = @[
+                            NSLocalizedString(@"cate_doge", nil),
+                            NSLocalizedString(@"cate_68", nil),
+                            NSLocalizedString(@"cate_egaotu", nil),
+                            NSLocalizedString(@"cate_egaoguanzhang", nil),
+                            NSLocalizedString(@"cate_guanzhang", nil),
+                            NSLocalizedString(@"cate_weisuocat", nil),
+                            NSLocalizedString(@"cate_yeliangchen", nil),
+                            NSLocalizedString(@"cate_huangzitao", nil),
+                            ];
+    }
+    
     
     _dogeItemList = [[NSMutableArray alloc] init];
     _kingItemList = [[NSMutableArray alloc] init];
@@ -220,30 +229,30 @@
             list.itemCount = 111;
         } else if ([indexPath row] == 1) {
             
-            list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_kingItemList];
-            list.categoryName = CATE_NAME_GUANZHANG;
-            list.itemCount = 247;
-        } else if ([indexPath row] == 2) {
-            
-            list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_baobaoItemList];
-            list.categoryName = CATE_NAME_WEISUOCAT;
-            list.itemCount = 61;
-        } else if ([indexPath row] == 3) {
-            
             list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_liubaItemList];
             list.categoryName = CATE_NAME_LIUBA;
             list.itemCount = 83;
-        }  else if ([indexPath row] == 4) {
+        }  else if ([indexPath row] == 2) {
             
             list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_egaotuItemList];
             list.categoryName = CATE_NAME_EGAOTU;
             list.itemCount = 103;
-        }  else if ([indexPath row] == 5) {
+        }  else if ([indexPath row] == 3) {
             
             list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_egaoguanzhangItemList];
             list.categoryName = CATE_NAME_EGAOGUANZHANG;
             list.itemCount = 87;
-        }  else if ([indexPath row] == 6) {
+        } else if ([indexPath row] == 4) {
+            
+            list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_kingItemList];
+            list.categoryName = CATE_NAME_GUANZHANG;
+            list.itemCount = 247;
+        } else if ([indexPath row] == 5) {
+            
+            list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_baobaoItemList];
+            list.categoryName = CATE_NAME_WEISUOCAT;
+            list.itemCount = 61;
+        }   else if ([indexPath row] == 6) {
             
             list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_liangchenItemList];
             list.categoryName = CATE_NAME_LIANGCHEN;
