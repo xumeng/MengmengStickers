@@ -80,7 +80,7 @@ extern BOOL reviewStatus;
                             NSLocalizedString(@"cate_68", nil),
                             NSLocalizedString(@"cate_egaotu", nil),
                             NSLocalizedString(@"cate_egaoguanzhang", nil),
-                            NSLocalizedString(@"cate_guanzhang", nil),
+
                             ];
     } else {
         _groupTitleList = @[
@@ -246,7 +246,7 @@ extern BOOL reviewStatus;
             
             list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_kingItemList];
             list.categoryName = CATE_NAME_GUANZHANG;
-            list.itemCount = 247;
+            list.itemCount = 217;
         } else if ([indexPath row] == 5) {
             
             list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH(_tableView), 150.0) title:title items:_baobaoItemList];
