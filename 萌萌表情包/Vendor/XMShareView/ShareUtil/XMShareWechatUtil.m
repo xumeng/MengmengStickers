@@ -66,6 +66,9 @@
     message.description = self.shareText;
     [message setThumbImage:[UIImage imageWithData:self.shareImageData]];
     
+//    WXImageObject *imgObject = [WXImageObject object];
+//    imgObject.imageData = self.shareImageData;
+    
     WXEmoticonObject *imgo = [WXEmoticonObject object];
 //    YYImage *image = [YYImage imageNamed:@"doge1.gif"];
     imgo.emoticonData = self.shareImageData;
